@@ -75,7 +75,8 @@ workspace "BorealisProject"
         {
             "GLFW",
             "glad",
-            "opengl32.lib"
+            "opengl32.lib",
+            "dwmapi.lib"
         }
 
         -- Filters only apply settings or add defines when their parameters are matched
@@ -91,6 +92,23 @@ workspace "BorealisProject"
             {
                 "BO_PLATFORM_WINDOWS"
             }
+
+          --  postbuildcommands
+           -- {
+           --     ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+           -- }
+
+        filter "configurations:Debug"
+            defines "BO_DEBUG"
+            symbols "On"
+
+        filter "configurations:Release"
+            defines "BO_RELEASE"
+            optimize "On"
+
+        filter "configurations:Dist"
+            defines "BO_DIST"
+            optimize "On"
     
     project "Sandbox"
         location "Sandbox"
@@ -122,10 +140,22 @@ workspace "BorealisProject"
 
         filter "system:windows"
                 cppdialect "C++20"
-                staticruntime "off"
+                staticruntime "Off"
                 systemversion "latest"
 
             defines
             {
                 "BO_PLATFORM_WINDOWS"
             }
+
+        filter "configurations:Debug"
+            defines "BO_DEBUG"
+            symbols "On"
+
+        filter "configurations:Release"
+            defines "BO_RELEASE"
+            optimize "On"
+
+        filter "configurations:Dist"
+            defines "BO_DIST"
+            optimize "On"

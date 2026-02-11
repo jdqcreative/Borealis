@@ -14,6 +14,9 @@ project "GLFW"
         "include/GLFW/glfwnative.h",
 
         -- Core glfw source files
+        "src/internal.h",
+        "src/platform.h",
+        "src/mappings.h",
         "src/context.c",
         "src/init.c",
         "src/input.c",
@@ -23,14 +26,16 @@ project "GLFW"
 
         -- Platform agnostic stuff (for non-Windows platforms)
         "src/null_platform.h",
-        "src/null_init.",
+        "src/null_init.c",
         "src/null_joystick.c",
         "src/null_monitor.c",
-        "src/null_window.c"
+        "src/null_window.c",
+        "src/platform.c",
     }
 
     filter "system:windows"
         systemversion "latest"
+        staticruntime "On"
 
         files
         {
@@ -39,9 +44,9 @@ project "GLFW"
             "src/win32_module.c",
             "src/win32_monitor.c",
             "src/win32_time.c",
+            "src/win32_thread.h",
             "src/win32_thread.c",
             "src/win32_window.c",
-            "src/platform.c",
 
             "src/wgl_context.c",
             "src/egl_context.c",
@@ -54,4 +59,10 @@ project "GLFW"
             "_CRT_SECURE_NO_WARNINGS"
         }
 
-        
+    filter "configurations:Debug"
+        runtime "Debug"
+        symbols "on"
+
+    filter "configurations:Release"
+        runtime "Release"
+        optimize "on"

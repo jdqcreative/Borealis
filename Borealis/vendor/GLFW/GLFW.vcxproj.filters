@@ -18,7 +18,19 @@
     <ClInclude Include="include\GLFW\glfwnative.h">
       <Filter>include\GLFW</Filter>
     </ClInclude>
+    <ClInclude Include="src\internal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mappings.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\null_platform.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win32_thread.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,6 +48,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\monitor.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\null_init.c">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\null_joystick.c">
@@ -83,10 +98,5 @@
     <ClCompile Include="src\window.c">
       <Filter>src</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="src\null_init.">
-      <Filter>src</Filter>
-    </None>
   </ItemGroup>
 </Project>
