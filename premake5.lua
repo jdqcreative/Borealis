@@ -90,7 +90,8 @@ workspace "BorealisProject"
             -- example: if (BO_PLATFORM_WINDOWS) { -run Windows specific code- }
             defines
             {
-                "BO_PLATFORM_WINDOWS"
+                "BO_PLATFORM_WINDOWS",
+                "GLFW_INCLUDE_NONE"
             }
 
           --  postbuildcommands

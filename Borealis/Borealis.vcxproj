@@ -76,7 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;BO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -98,7 +98,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;BO_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -124,7 +124,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>bopch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;BO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BO_PLATFORM_WINDOWS;GLFW_INCLUDE_NONE;BO_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\glad\include;vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -154,6 +154,8 @@
     <ClInclude Include="src\Borealis\Events\Event.h" />
     <ClInclude Include="src\Borealis\Events\KeyEvent.h" />
     <ClInclude Include="src\Borealis\Events\MouseEvent.h" />
+    <ClInclude Include="src\Borealis\Layer.h" />
+    <ClInclude Include="src\Borealis\LayerStack.h" />
     <ClInclude Include="src\Borealis\Log.h" />
     <ClInclude Include="src\Borealis\Window.h" />
     <ClInclude Include="src\Platform\WindowsWindow.h" />
@@ -161,6 +163,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Borealis\Application.cpp" />
+    <ClCompile Include="src\Borealis\Layer.cpp" />
+    <ClCompile Include="src\Borealis\LayerStack.cpp" />
     <ClCompile Include="src\Borealis\Log.cpp" />
     <ClCompile Include="src\Platform\WindowsWindow.cpp" />
     <ClCompile Include="src\bopch.cpp">

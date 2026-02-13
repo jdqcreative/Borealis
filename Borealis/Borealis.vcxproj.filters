@@ -34,6 +34,12 @@
     <ClInclude Include="src\Borealis\Events\MouseEvent.h">
       <Filter>Borealis\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Borealis\Layer.h">
+      <Filter>Borealis</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Borealis\LayerStack.h">
+      <Filter>Borealis</Filter>
+    </ClInclude>
     <ClInclude Include="src\Borealis\Log.h">
       <Filter>Borealis</Filter>
     </ClInclude>
@@ -47,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Borealis\Application.cpp">
+      <Filter>Borealis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Borealis\Layer.cpp">
+      <Filter>Borealis</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Borealis\LayerStack.cpp">
       <Filter>Borealis</Filter>
     </ClCompile>
     <ClCompile Include="src\Borealis\Log.cpp">
