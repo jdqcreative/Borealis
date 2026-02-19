@@ -20,11 +20,13 @@ workspace "BorealisProject"
     IncludeDir["glad"] = "Borealis/vendor/glad/include"
     IncludeDir["stb_image"] = "Borealis/vendor/stb_image"
     IncludeDir["spdlog"] = "Borealis/vendor/spdlog/include"
+    IncludeDir["ImGui"] = "Borealis/vendor/imgui"
 
     -- 'include' tells Premake to look for other premake5.lua files inside those folders
     -- so each library can build themselves 
     include "Borealis/vendor/GLFW"
     include "Borealis/vendor/glad"
+    include "Borealis/vendor/imgui"
 
     -- The game engine project
     project "Borealis"
@@ -64,6 +66,7 @@ workspace "BorealisProject"
             "%{IncludeDir.spdlog}",
             "%{IncludeDir.GLFW}",
             "%{IncludeDir.glad}",
+            "%{IncludeDir.ImGui}",
             "%{IncludeDir.stb_image}",
         }
 
@@ -75,6 +78,7 @@ workspace "BorealisProject"
         {
             "GLFW",
             "glad",
+            "ImGui",
             "opengl32.lib",
             "dwmapi.lib"
         }

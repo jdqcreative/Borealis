@@ -1,0 +1,3 @@
+[submodule "Borealis/vendor/imgui"]
+	path = Borealis/vendor/imgui
+	url = https://github.com/TheCherno/imgui.git
