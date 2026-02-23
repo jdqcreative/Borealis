@@ -9,12 +9,17 @@ public:
 
 	void OnUpdate() override
 	{
-		BO_INFO("ExampleLayer::Update");
+		if (Borealis::Input::IsKeyPressed(BO_KEY_TAB))
+			BO_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Borealis::Event& event) override
 	{
-		BO_TRACE("{0}", event);
+		if (event.GetEventType() == Borealis::EventType::KeyPressed)
+		{
+			Borealis::KeyPressedEvent& e = (Borealis::KeyPressedEvent&)event;
+			BO_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

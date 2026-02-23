@@ -21,6 +21,7 @@ workspace "BorealisProject"
     IncludeDir["stb_image"] = "Borealis/vendor/stb_image"
     IncludeDir["spdlog"] = "Borealis/vendor/spdlog/include"
     IncludeDir["ImGui"] = "Borealis/vendor/imgui"
+    IncludeDir["glm"] = "Borealis/vendor/glm"
 
     -- 'include' tells Premake to look for other premake5.lua files inside those folders
     -- so each library can build themselves 
@@ -53,8 +54,8 @@ workspace "BorealisProject"
         {
             "%{prj.name}/src/**.h",
             "%{prj.name}/src/**.cpp",
-            --"%{prj.name}/vendor/**.h",
-            --"%{prj.name}/vendor/**.cpp",
+            "%{prj.name}/vendor/glm/glm/**.h",
+            "%{prj.name}/vendor/glm/glm/**.inl"
         }
 
         -- This tells the compiler where to look when you type #include <something.h>
@@ -67,6 +68,7 @@ workspace "BorealisProject"
             "%{IncludeDir.GLFW}",
             "%{IncludeDir.glad}",
             "%{IncludeDir.ImGui}",
+            "%{IncludeDir.glm}",
             "%{IncludeDir.stb_image}",
         }
 
@@ -135,7 +137,8 @@ workspace "BorealisProject"
         includedirs
         {
             "%{IncludeDir.spdlog}",
-            "Borealis/src"
+            "Borealis/src",
+            "%{IncludeDir.glm}"
         }
 
         links
